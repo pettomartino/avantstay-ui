@@ -43,7 +43,7 @@ const simulatedPortal = (() => {
   el.style.overflow = 'hidden'
   document.body.appendChild(el)
   return el
-})()
+})
 
 export default function Tooltip(props: TooltipProps) {
   const {
@@ -142,7 +142,7 @@ export default function Tooltip(props: TooltipProps) {
         <SimulatedTipContainer ref={simulatedContainerRef} maxWidth={maxWidth} padding={tipContainerPadding}>
           {tip}
         </SimulatedTipContainer>,
-        simulatedPortal
+        simulatedPortal()
       )}
       {React.cloneElement(children as any, {
         ref: wrapperRef,
